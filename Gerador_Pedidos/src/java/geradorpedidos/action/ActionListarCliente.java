@@ -21,7 +21,7 @@ public class ActionListarCliente implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<Cliente> clientes = new ClienteDAO().getClientes();
 		
-		request.setAttribute("cliente", clientes);
+		request.setAttribute("clientes", clientes);
 		
 		return "/WEB-INF/jsp/listarClientes.jsp";
 	}

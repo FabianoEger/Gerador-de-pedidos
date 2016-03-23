@@ -38,7 +38,7 @@ public class ClienteDAO {
                 pstm.setString(2, cliente.getEmail());
                 pstm.execute();
 
-            } catch (Exception e) {
+            } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException("Não foi possível inserir o cliente");
             } finally {
                 if (conn != null) {
@@ -105,7 +105,7 @@ public class ClienteDAO {
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
-        ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+        ArrayList<Cliente> clientes = new ArrayList<>();
         try {
             conn = ConnectionManager.getConnection();
             pstm = conn.prepareStatement(LIST);
@@ -117,7 +117,7 @@ public class ClienteDAO {
                 cliente.setEmail(rs.getString("email"));
                 clientes.add(cliente);
             }
-        } catch (Exception e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException("Não foi possível listar os clientes");
         } finally {
             if (conn != null) {

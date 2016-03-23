@@ -18,7 +18,7 @@ public class ActionRemoverCliente implements Action{
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        int id = Integer.parseInt(request.getParameter("idcliente"));
+        int id = Integer.parseInt(request.getParameter("id"));
 		      Cliente cliente = new Cliente();
 		cliente.setIdCliente(id);
 		

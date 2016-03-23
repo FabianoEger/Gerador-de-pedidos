@@ -8,6 +8,6 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		Contato ${param.nomecliente} adicionado com sucesso
+		Contato ${param.nomeCliente} adicionado com sucesso
 	</body>
 </html>

@@ -19,26 +19,23 @@ public class ConnectionManager {
 
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
-    private static final String DATABASE = "gerador_pedidos";
+    private static final String DATABASE = "db_gerador_pedidos";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String STR_CONNECTION = "jdbc:mysql://localhost:3306/";
     private static Connection conn = null;
 
     public static Connection getConnection() throws SQLException,
             ClassNotFoundException {
+
         try {
-            if (conn == null) {
-                Class.forName(DRIVER);
-                conn = DriverManager.getConnection(STR_CONNECTION + DATABASE, USERNAME,
-                        PASSWORD);
-            }
-            //return conn;
+            Class.forName(DRIVER);
+            return DriverManager.getConnection(STR_CONNECTION + DATABASE, USERNAME, PASSWORD);
+
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Driver do banco não carregado", e);
         } catch (SQLException e) {
             throw new RuntimeException("Não foi possível abrir conexão com o banco", e);
         }
-        return conn;
     }
 
     public static void closeConnection(Connection conn) {

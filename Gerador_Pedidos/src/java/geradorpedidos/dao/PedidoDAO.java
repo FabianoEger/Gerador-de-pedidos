@@ -7,6 +7,7 @@ package geradorpedidos.dao;
 
 import geradorpedidos.model.Pedido;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,7 +35,7 @@ public class PedidoDAO {
                 pstm = conn.prepareStatement(INSERT);
                 pstm.setInt(1, pedido.getIdCliente());
                 pstm.setDouble(2, pedido.getValorPedido());
-                pstm.setDate(3, pedido.getDataPedido());
+                pstm.setDate(3, (Date) pedido.getDataPedido());
                 pstm.execute();
             } catch (SQLException | ClassNotFoundException e) {
                 throw new RuntimeException("Não foi possível inserir o pedido");
@@ -59,7 +60,7 @@ public class PedidoDAO {
                 pstm = conn.prepareStatement(UPDATE);
                 pstm.setInt(1, pedido.getIdCliente());
                 pstm.setDouble(2, pedido.getValorPedido());
-                pstm.setDate(3, pedido.getDataPedido());
+                pstm.setDate(3, (Date) pedido.getDataPedido());
                 pstm.setInt(4, pedido.getIdPedido());
                 pstm.execute();
             } catch (SQLException | ClassNotFoundException e) {

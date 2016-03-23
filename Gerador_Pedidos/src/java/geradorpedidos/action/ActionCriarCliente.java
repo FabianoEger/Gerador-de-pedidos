@@ -18,15 +18,14 @@ public class ActionCriarCliente implements Action {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
         Cliente cliente = new Cliente();
         cliente.setNomeCliente(request.getParameter("nomecliente"));
         cliente.setEmail(request.getParameter("email"));
 
         ClienteDAO dao = new ClienteDAO();
 
-        if (request.getParameter("idcliente") != null) {
-            int id = Integer.parseInt(request.getParameter("idcliente"));
+        if (!"0".equals(request.getParameter("id"))) {
+            int id = Integer.parseInt(request.getParameter("id"));
             cliente.setIdCliente(id);
             dao.atualizar(cliente);
 

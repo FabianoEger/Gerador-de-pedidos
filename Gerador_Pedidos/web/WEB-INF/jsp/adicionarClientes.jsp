@@ -19,12 +19,12 @@
   <body>
     <h1>Adiciona clientes</h1>
     <hr/>
-    <form action="controller?action=ActionCadastrarCliente" method="POST">
-    	Nome: <input type="text" name="nomecliente" value="${cliente.nomecliente}"><br>
+    <form action="controller?action=ActionCriarCliente" method="POST">
+    	Nome: <input type="text" name="nomecliente" value="${cliente.nomeCliente}"><br>
     	E-mail: <input type="text" name="email" value="${cliente.email}"><br>
    
-    	<c:if test="${ cliente.idcliente != 0 }">
-    		<input type="hidden" name="id" value="${cliente.idcliente}">
+    	<c:if test="${ cliente.idCliente != 0 }">
+    		<input type="hidden" name="id" value="${cliente.idCliente}">
     	</c:if>
     	<input type="submit" value="Gravar">
     </form>

@@ -10,7 +10,7 @@
 </head>
 <body>
   <h2>${mensagem}</h2>
-  <a href="controller?action=ActionFormEditContato">Novo cliente</a>
+  <a href="controller?action=ActionFormEditarCliente">Novo cliente</a>
   <table>
     <thead>
       <tr>
@@ -20,9 +20,9 @@
         <th colspan="2">attribute</th>
       </tr>
     </thead>
-    <c:forEach var="cliente" items="${clientes}" varStatus="idcliente">
+    <c:forEach var="cliente" items="${clientes}" varStatus="id">
   	  <tr bgcolor="#${id.count %2 == 0 ? 'aaee88' : 'ffffff' }">
-  	    <td>${cliente.nomecliente}</td>
+  	    <td>${cliente.nomeCliente}</td>
   	    <td>
   	      <c:choose>
 			<c:when test="${not empty cliente.email}">
@@ -34,8 +34,8 @@
 		  </c:choose>
             </td>
 	    
-	    <td><a href="controller?action=ActionFormEditarCliente&id=${cliente.idcliente}">Editar</a></td>
-	    <td><a href="controller?action=ActionRemoverCliente&id=${cliente.idcliente}">Remover</a></td>
+	    <td><a href="controller?action=ActionFormEditarCliente&id=${cliente.idCliente}">Editar</a></td>
+	    <td><a href="controller?action=ActionRemoverCliente&id=${cliente.idCliente}">Remover</a></td>
   	  </tr>
   	</c:forEach>
   </table>

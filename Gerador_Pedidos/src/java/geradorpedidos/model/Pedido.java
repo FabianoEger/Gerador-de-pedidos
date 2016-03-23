@@ -5,7 +5,8 @@
  */
 package geradorpedidos.model;
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -48,6 +49,14 @@ public class Pedido {
 
     public void setDataPedido(Date dataPedido) {
         this.dataPedido = dataPedido;
+    }
+
+    public void setEmail(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setDataPedido(Calendar dataPedido) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -11,7 +11,7 @@ public class ActionFormEditarCliente implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        String strId = request.getParameter("idcliente");
+        String strId = request.getParameter("id");
 
         Cliente cliente = new Cliente();
 

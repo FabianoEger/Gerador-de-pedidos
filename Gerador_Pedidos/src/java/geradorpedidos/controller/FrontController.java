@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author fabiano.eger
  */
 @SuppressWarnings("serial")
-@WebServlet("index")
+@WebServlet("/controller")
 public class FrontController extends HttpServlet {
 
     @Override
@@ -29,7 +29,7 @@ public class FrontController extends HttpServlet {
         try {
             String view = action.execute(request, response);
 
-            request.getRequestDispatcher("/WEB-INF/jsp/" + view + ".jsp")
+            request.getRequestDispatcher(view)
                     .forward(request, response);
 
         } catch (Exception e) {
