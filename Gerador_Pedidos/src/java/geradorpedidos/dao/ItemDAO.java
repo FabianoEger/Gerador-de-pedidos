@@ -96,7 +96,7 @@ public class ItemDAO {
         }
     }
 
-    public List<Item> getItemPedidos() throws SQLException {
+    public List<Item> getItens() throws SQLException {
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs;
@@ -126,7 +126,7 @@ public class ItemDAO {
         return itens;
     }
 
-    public Item getItemPedidoById(int id) throws SQLException {
+    public Item getItensById(int id) throws SQLException {
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs;

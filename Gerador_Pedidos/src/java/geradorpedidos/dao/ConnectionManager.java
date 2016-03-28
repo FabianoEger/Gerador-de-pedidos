@@ -7,8 +7,6 @@ package geradorpedidos.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -21,9 +19,8 @@ public class ConnectionManager {
     private static final String PASSWORD = "root";
     private static final String DATABASE = "db_gerador_pedidos";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String STR_CONNECTION = "jdbc:mysql://localhost:3306/";
-    private static Connection conn = null;
-
+    private static final String STR_CONNECTION = "jdbc:mysql://localhost:8080/";
+    
     public static Connection getConnection() throws SQLException,
             ClassNotFoundException {
 

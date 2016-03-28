@@ -6,40 +6,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Lista de Contatos</title>
+<title>Lista de pedidos</title>
 </head>
 <body>
   <h2>${mensagem}</h2>
-  <a href="controller?action=ActionFormEditContato">Novo Contato</a>
+  <a href="controller?action=ActionFormEditarPedido">Novo pedido</a>
   <table>
     <thead>
       <tr>
-        <th>Nome</th>
-        <th>E-Mail</th>
-        <th>EndereÃ§o</th>
-        <th>Data de Nascimento</th>
-        <th colspan="2">AÃ§Ãµes</th>
+        <th>Id pedido</th>
+        <th>Id cliente</th>
+        <th>Valor do pedido</th>
+        <th>Data do pedido</th>
+        <th colspan="2">Acoes</th>
       </tr>
     </thead>
-    <c:forEach var="contato" items="${contatos}" varStatus="id">
+    <c:forEach var="pedido" items="${pedidos}" varStatus="id">
   	  <tr bgcolor="#${id.count %2 == 0 ? 'aaee88' : 'ffffff' }">
-  	    <td>${contato.nome}</td>
-  	    <td>
-  	      <c:choose>
-			<c:when test="${not empty contato.email}">
-  			  <a href="mailto:${contato.email}">${contato.email}</a>
-			</c:when>
-			<c:otherwise>
-			  E-mail nÃ£o informado
-			</c:otherwise>
-		  </c:choose>
-		</td>
-	    <td>${contato.endereco}</td>
+  	    <td>${pedido.idPedido}</td>
+  	    <td>${pedido.idCliente}</td>
+	    <td>${pedido.valorPedido}</td>
 	    <td>
-	      <fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" />
+	      <fmt:formatDate value="${pedido.dataPedido.time}" pattern="dd/MM/yyyy" />
 	    </td>
-	    <td><a href="controller?action=ActionFormEditContato&id=${contato.id}">Editar</a></td>
-	    <td><a href="controller?action=ActionRemoveContato&id=${contato.id}">Remover</a></td>
+	    <td><a href="controller?action=ActionFormEditarPedido&id=${pedido.id}">Editar</a></td>
+	    <td><a href="controller?action=ActionRemoverPedido&id=${pedido.id}">Remover</a></td>
   	  </tr>
   	</c:forEach>
   </table>

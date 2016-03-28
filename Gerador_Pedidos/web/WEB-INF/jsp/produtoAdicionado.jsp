@@ -1,8 +1,9 @@
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<body>
-		Contato ${param.nomeCliente} adicionado com sucesso
+		Produto ${param.idProduto} cadastrado com sucesso
 	</body>
 </html>
